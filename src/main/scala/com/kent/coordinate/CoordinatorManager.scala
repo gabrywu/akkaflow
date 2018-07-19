@@ -28,7 +28,7 @@ class CoordinatorManager extends DaemonActor{
   var scheduler: Cancellable = _
   
     /**
-   * 初始化(从数据库中读取coordinator，同步阻塞方法)
+   * 初始化(从数据库 中读取coordinator，同步阻塞方法)
    */
   def init(){
      val rsF = (Master.persistManager ? Query("select xml_str from coordinator")).mapTo[List[List[String]]]
